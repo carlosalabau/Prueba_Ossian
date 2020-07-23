@@ -1,6 +1,24 @@
-<div class="container">
-    <div class="imagen" *ngFor="let dat of data">
-        <img src="{{dat.url}}" alt="imagen" />
+<main class="container">
+  <section class="images">
+    <div class="card-deck">
+      <div class="card" *ngFor="let dat of data">
+        <div class="card-img">
+          <img src="{{ dat.url }}" class="card-img-top" alt="..." />
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ dat.title }}</h5>
+          <p class="card-text">
+            {{ dat.category }}
+          </p>
+        </div>
+        <div class="card-footer">
+          <i class="fas fa-info-circle blue"></i>
+          <div class="separador"></div>
+          <i class="far fa-edit green"></i>
+          <div class="separador"></div>
+          <i class="far fa-trash-alt red"></i>
+        </div>
+      </div>
     </div>
-    
-</div>
+  </section>
+</main>

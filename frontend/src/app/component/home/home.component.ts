@@ -18,6 +18,5 @@ export class HomeComponent implements OnInit {
   }
   ngOnInit(): void {
     this.saveData();
-    console.log(this.data)
   }
 }

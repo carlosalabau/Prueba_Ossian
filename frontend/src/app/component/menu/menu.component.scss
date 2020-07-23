@@ -1,0 +1,24 @@
+.menu{
+    background-color: rgba(31, 29, 29, 0.863);
+    height: 80px;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    a{
+        all: unset;
+        color:white;
+    }
+    a:hover{
+        cursor: pointer;
+    }
+    li{
+        display: inline;
+        padding: 20px;
+        font-size: 20px;
+    }
+    
+}
