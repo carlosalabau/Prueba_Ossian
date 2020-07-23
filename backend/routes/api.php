@@ -14,13 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Listar todas las imagenes
-Route::get('/', 'ImagenController@listar');
-
 // Crud 
 Route::group([
     'prefix' => 'imagen'
 ], function () {
+    Route::get('/', 'ImagenController@listar');
     Route::post('/crear', 'ImagenController@crear');
     Route::get('/detalle/{id}', 'ImagenController@detalle');
     Route::put('/editar/{id}', 'ImagenController@editar');
