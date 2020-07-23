@@ -14,6 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+// Listar todas las imagenes
+Route::get('/', 'ImagenController@listar');
+
+// Crud 
+Route::group([
+    'prefix' => 'imagen'
+], function () {
+    Route::post('/crear', 'ImagenController@crear');
+    Route::get('/detalle/{id}', 'ImagenController@detalle');
+    Route::put('/editar/{id}', 'ImagenController@editar');
+    Route::delete('/eliminar/{id}', 'ImagenController@eliminar');
 });
