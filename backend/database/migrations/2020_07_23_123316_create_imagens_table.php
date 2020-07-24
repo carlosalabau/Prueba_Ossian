@@ -18,7 +18,7 @@ class CreateImagensTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('category');
-            $table->string('url');
+            $table->text('url');
         });
     }
 

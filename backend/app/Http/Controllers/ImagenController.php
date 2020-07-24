@@ -8,30 +8,42 @@ use App\Imagen;
 class ImagenController extends Controller
 {
 
-    public function listar()
+    public function list()
     {
         return Imagen::all();
     }
-    public function crear(Request $request)
+    public function add(Request $request)
     {
         $body = $request->all();
         $crear = Imagen::create($body);
         return response(['msg'=>'correcto', 'datos' =>$crear]);
     }
-    public function detalle($id)
+    public function detail($id)
     {
         return Imagen::where('id', '=', $id)->get();
     }
-    public function eliminar($id)
+    public function delete($id)
     {
         $imagen = Imagen::find($id);
         $eliminar = $imagen->delete();
         return response(['msg'=>'Eliminado con exito', 'datos'=>$eliminar]);
     }
-    public function editar(Request $request, $id)
+    public function update(Request $request, $id)
     {
         $imagen = Imagen::find($id);
-        $editar = $imagen->update($request->all());
-        return response(['msg'=>'Campos editados con exito', 'datos'=>$editar]);
+        if($imagen->title == null){
+            $imagen->title = $imagen->title;
+        }
+        if($imagen->category == null){
+            $imagen->category = $imagen->category;
+        }
+        if($imagen->description == null){
+            $imagen->description = $imagen->description;
+        }
+        if($imagen->url == null){
+            $imagen->url = $imagen->url;
+        }
+        $imagen->save();
+        return response(['msg'=>'Campos editados con exito', 'datos'=>$imagen]);
     }
 }

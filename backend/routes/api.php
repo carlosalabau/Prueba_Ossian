@@ -18,9 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::group([
     'prefix' => 'imagen'
 ], function () {
-    Route::get('/', 'ImagenController@listar');
-    Route::post('/crear', 'ImagenController@crear');
-    Route::get('/detalle/{id}', 'ImagenController@detalle');
-    Route::put('/editar/{id}', 'ImagenController@editar');
-    Route::delete('/eliminar/{id}', 'ImagenController@eliminar');
+    Route::get('/', 'ImagenController@list');
+    Route::post('/add', 'ImagenController@add');
+    Route::get('/detail/{id}', 'ImagenController@detail');
+    Route::put('/update/{id}', 'ImagenController@update');
+    Route::delete('/delete/{id}', 'ImagenController@delete');
 });
