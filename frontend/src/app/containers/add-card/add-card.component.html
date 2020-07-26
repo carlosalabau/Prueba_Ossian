@@ -1,25 +1,25 @@
 <main class="container">
   <section class="create">
     <h3>Formulario para la creacion de tarjetas</h3>
-    <form class="newData">
+    <form class="newData" #addForm="ngForm" (submit)="addCard(addForm)">
       <div class="group-form">
         <label for="">Titulo:</label>
-        <input type="text" />
+        <input type="text" ngModel name="title">
       </div>
       <div class="group-form">
         <label for="">Descripcion:</label>
-        <textarea type="text"></textarea>
+        <textarea type="text" ngModel name="description"></textarea>
       </div>
       <div class="group-form">
         <label for="">Categoria:</label>
-        <input type="text" />
+        <input type="text" ngModel name="category">
       </div>
       <div class="group-form">
         <label for="">Url:</label>
-        <input type="text" />
+        <input type="text" ngModel name="url">
       </div>
       <div class="buttons">
-        <button class="add">Crear</button>
+        <button type="submit" class="add">Crear</button>
         <button class="reset">Reset</button>
       </div>
     </form>

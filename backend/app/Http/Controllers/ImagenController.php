@@ -33,15 +33,23 @@ class ImagenController extends Controller
         $imagen = Imagen::find($id);
         if($imagen->title == null){
             $imagen->title = $imagen->title;
+        }else{
+            $imagen->title = $request->title;
         }
         if($imagen->category == null){
             $imagen->category = $imagen->category;
+        }else{
+            $imagen->category = $request->category;
         }
         if($imagen->description == null){
             $imagen->description = $imagen->description;
+        }else{
+            $imagen->description = $request->description;
         }
         if($imagen->url == null){
             $imagen->url = $imagen->url;
+        }else{
+            $imagen->url = $request->url;
         }
         $imagen->save();
         return response(['msg'=>'Campos editados con exito', 'datos'=>$imagen]);
