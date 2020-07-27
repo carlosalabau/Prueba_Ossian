@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 // Crud 
 Route::group([
-    'prefix' => 'imagen'
+    'prefix' => 'image'
 ], function () {
     Route::get('/', 'ImagenController@list');
     Route::post('/add', 'ImagenController@add');
