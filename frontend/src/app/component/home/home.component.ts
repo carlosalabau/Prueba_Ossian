@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
   }
   saveData() {
     this.imagesService.getData().subscribe((res: any) => {
-      this.data = res;
+      this.data = res.datos;
     });
   }
   deleteCard(id) {

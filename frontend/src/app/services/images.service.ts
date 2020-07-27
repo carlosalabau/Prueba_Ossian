@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class ImagesService {
   constructor(private http: HttpClient) {}
 
-  url = 'http://localhost:8000/api/imagen';
+  url = 'http://localhost:8000/api/image';
 
   getData() {
     return this.http.get(this.url);

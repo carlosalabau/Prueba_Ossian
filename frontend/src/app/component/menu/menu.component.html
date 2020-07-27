@@ -1,9 +1,10 @@
 <main class="container-fluid menu">
   <section class="container">
-    <nav>
+    <nav class="elements">
+        <p>Carlos Alabau</p>
       <ul>
-        <a routerLink="/"><li>Inicio</li></a>
-        <a routerLink="/add"><li>Nueva Tarjeta</li></a>
+        <a routerLink="/"><li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Inicio</li></a>
+        <a routerLink="/add"><li routerLinkActive="active">Nueva Tarjeta</li></a>
       </ul>
     </nav>
   </section>

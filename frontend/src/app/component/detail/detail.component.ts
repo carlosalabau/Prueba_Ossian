@@ -23,7 +23,7 @@ export class DetailComponent implements OnInit {
   detailById() {
     this.getUrl();
     this.imagesService.getById(this.id).subscribe((res:any)=>{
-      this.data = res;
+      this.data = res.datos;
     })
   }
 

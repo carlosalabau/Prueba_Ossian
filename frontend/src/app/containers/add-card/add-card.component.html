@@ -1,26 +1,97 @@
 <main class="container">
   <section class="create">
-    <h3>Formulario para la creacion de tarjetas</h3>
-    <form class="newData" #addForm="ngForm" (submit)="addCard(addForm)">
-      <div class="group-form">
-        <label for="">Titulo:</label>
-        <input type="text" ngModel name="title">
+    <h3>Formulario para la creación de tarjetas</h3>
+    <form
+      [formGroup]="form"
+      class="newData"
+      #addForm="ngForm"
+      (ngSubmit)="addCard(addForm)"
+    >
+      <div class="form-group">
+        <label>Título</label>
+        <input
+          type="email"
+          formControlName="title"
+          name="title"
+          ngModel
+          class="form-control"
+          [ngClass]="{ 'is-invalid': noValido && f.title.errors }"
+        />
+        <div
+          *ngIf="noValido && f.title.errors"
+          class="invalid-feedback"
+        >
+          <div *ngIf="f.title.errors.required">
+            Por favor, introduce el título
+          </div>
+        </div>
       </div>
-      <div class="group-form">
-        <label for="">Descripcion:</label>
-        <textarea type="text" ngModel name="description"></textarea>
+      <div class="form-group">
+        <label>Descripción</label>
+
+        <textarea
+          type="text"
+          name="description"
+          formControlName="description"
+          ngModel
+          class="form-control"
+          [ngClass]="{ 'is-invalid': noValido && f.description.errors }"
+        ></textarea>
+        <div
+          *ngIf="noValido && f.description.errors"
+          class="invalid-feedback"
+        >
+          <div *ngIf="f.description.errors.required">
+            Por favor, introduce una descripción
+          </div>
+        </div>
       </div>
-      <div class="group-form">
-        <label for="">Categoria:</label>
-        <input type="text" ngModel name="category">
+
+      <div class="form-group">
+        <label>Categoría</label>
+
+        <input
+          type="text"
+          name="category"
+          ngModel
+          formControlName="category"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': noValido && f.category.errors }"
+        />
+        <div
+          *ngIf="noValido && f.category.errors"
+          class="invalid-feedback"
+        >
+          <div *ngIf="f.category.errors.required">
+            Por favor, introduce una categoría
+          </div>
+        </div>
       </div>
-      <div class="group-form">
-        <label for="">Url:</label>
-        <input type="text" ngModel name="url">
+
+      <div class="form-group">
+        <label>Url</label>
+
+        <input
+          type="text"
+          name="url"
+          ngModel
+          formControlName="url"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': noValido && f.url.errors }"
+        />
+        <div
+          *ngIf="noValido && f.url.errors"
+          class="invalid-feedback"
+        >
+          <div *ngIf="f.url.errors.required">
+            Por favor, introduce una URL
+          </div>
+        </div>
       </div>
+
       <div class="buttons">
-        <button type="submit" class="add">Crear</button>
-        <button class="reset">Reset</button>
+        <button type="submit" class="btn btn-success">Crear</button>
+        <button class="btn btn-danger" type="reset">Reset</button>
       </div>
     </form>
   </section>
