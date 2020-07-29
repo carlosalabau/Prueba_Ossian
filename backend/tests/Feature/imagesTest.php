@@ -13,12 +13,10 @@ class imagesTest extends TestCase
      *
      * @return void
      */
-    public function testaddImageTest()
+    public function testAddImage()
     {
-
         $response = $this->json('POST','api/image/add',
         [
-            'id'=>9,
             'title'=>'Prueba',
             'description'=>'Prueba 1',
             'category'=>'Informatica',
@@ -26,18 +24,21 @@ class imagesTest extends TestCase
         ]);
         $response->assertStatus(201);    
     }
-    public function testdetailImageTest(){
-        $response = $this->get('api/image/detail/9');
+    public function testDetailImage(){
+        $response = $this->get('api/image/detail/1');
         $response->assertSuccessful();
     }
-    public function testdeleteImageTest(){
-        $response = $this->delete('api/image/delete/9');
+    public function testDeleteImage(){
+        $response = $this->delete('api/image/delete/1');
         $response->assertSuccessful();
     }
-    public function testupdateImageTest(){
-        $response = $this->json('PUT', 'api/image/update/9',
+    public function testUpdateImage(){
+        $response = $this->json('PUT', 'api/image/update/2',
         [
-            'title'=>'Prueba tecnica'
+            'title'=>'Prueba tecnica',
+            'description' => 'Esto es una prueba',
+            'category' => 'Social',
+            'url' => 'http://internal.ossian.tech/upload/sample/ave1.jpeg'
         ]);
         $response->assertSuccessful();
     }
