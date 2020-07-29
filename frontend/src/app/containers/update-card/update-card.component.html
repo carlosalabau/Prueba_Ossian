@@ -5,11 +5,17 @@
     </span>
   </div>
   <section class="create">
-    <h3>Formulario para la creación de tarjetas</h3>
-    <form class="newData" #addForm="ngForm" (ngSubmit)="addCard(addForm)">
+    <h3>Actualizar tarjeta</h3>
+    <form class="newData" #addForm="ngForm" (ngSubmit)="updateCard(addForm)">
       <div class="form-group">
         <label>Título</label>
-        <input type="email" name="title" ngModel class="form-control" />
+        <input
+          type="email"
+          name="title"
+          [(ngModel)]="title"
+          ngModel
+          class="form-control"
+        />
         <small class="form-text text-muted">
           El campo título es obligatorio
         </small>
@@ -21,6 +27,7 @@
           type="text"
           name="description"
           ngModel
+          [(ngModel)]="description"
           class="form-control"
         ></textarea>
         <small class="form-text text-muted">
@@ -31,7 +38,13 @@
       <div class="form-group">
         <label>Categoría</label>
 
-        <input type="text" name="category" ngModel class="form-control" />
+        <input
+          type="text"
+          name="category"
+          [(ngModel)]="category"
+          ngModel
+          class="form-control"
+        />
         <small class="form-text text-muted">
           El campo categoría es obligatorio
         </small>
@@ -40,14 +53,20 @@
       <div class="form-group">
         <label>Url</label>
 
-        <input type="text" name="url" ngModel class="form-control" />
+        <input
+          type="text"
+          name="url"
+          [(ngModel)]="url"
+          ngModel
+          class="form-control"
+        />
         <small class="form-text text-muted">
           El campo url es obligatorio
         </small>
       </div>
 
       <div class="buttons">
-        <button type="submit" class="btn btn-success">Crear</button>
+        <button type="submit" class="btn btn-success">Actualizar</button>
         <button class="btn btn-danger" type="reset">Reset</button>
       </div>
     </form>

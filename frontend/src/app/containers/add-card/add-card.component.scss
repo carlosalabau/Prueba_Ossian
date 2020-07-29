@@ -31,3 +31,19 @@
     background-color: $red;
   }
 }
+
+.notification {
+  position: fixed;
+  display: none;
+  top: 115px;
+  right: 10%;
+  z-index: 999;
+  height: auto;
+  background: black;
+  max-width: 600px;
+  p {
+    margin: 0;
+    padding: 15px 35px;
+    color: white;
+  }
+}
