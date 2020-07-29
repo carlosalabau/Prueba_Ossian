@@ -13,8 +13,9 @@ class imagesTest extends TestCase
      *
      * @return void
      */
-    public function addImage()
+    public function testaddImageTest()
     {
+
         $response = $this->json('POST','api/image/add',
         [
             'id'=>9,
@@ -25,15 +26,15 @@ class imagesTest extends TestCase
         ]);
         $response->assertStatus(201);    
     }
-    public function detailImage(){
+    public function testdetailImageTest(){
         $response = $this->get('api/image/detail/9');
         $response->assertSuccessful();
     }
-    public function deleteImage(){
+    public function testdeleteImageTest(){
         $response = $this->delete('api/image/delete/9');
         $response->assertSuccessful();
     }
-    public function updateImage(){
+    public function testupdateImageTest(){
         $response = $this->json('PUT', 'api/image/update/9',
         [
             'title'=>'Prueba tecnica'
